@@ -1,0 +1,10 @@
+{
+  "username": "demouser",
+  "password": "fashion123",
+  "repo_owner": "appwrite",
+  "repo": "appwrite",
+  "state": "open",
+  "per_page": 100,
+  "github_token": "YOUR-TOKEN",
+  "github_api_version": "2022-11-28"
+}
