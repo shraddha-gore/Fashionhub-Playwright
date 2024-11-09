@@ -1,6 +1,6 @@
 # Overview
 
-This project is a test automation framework developed using Playwright and JavaScript to test the Fashionhub demo application. The framework includes:
+This project is a test automation framework developed using [Playwright](https://playwright.dev/) and JavaScript to test the Fashionhub demo application. The framework includes:
 
 - **Three UI validation tests** that verify critical functionalities within the Fashionhub demo app.
 - **One API test** that retrieves pull request (PR) details of a specified GitHub repository and exports the data to a CSV file.
