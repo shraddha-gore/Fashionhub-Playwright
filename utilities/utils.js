@@ -52,11 +52,11 @@ export async function fetchPRs(owner, repo, state, authToken) {
 
 /**
  * Writes the provided data to a CSV file.
- * The CSV file is generated in 'output' directory.
+ * The CSV file is generated in output-dir directory.
  * Arguments - data, headers, fileName
  */
 export function writeToCSV(data, headers, fileName) {
-  // Resolve the path to the 'output' directory.
+  // Resolve the path to the output-dir directory.
 
   const dirPath = path.resolve(__dirname, `../${configData["output-dir"]}`);
   const filePath = path.join(dirPath, fileName);
