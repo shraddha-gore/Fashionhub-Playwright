@@ -1,7 +1,7 @@
 // @ts-check
 import { test } from "@playwright/test";
 import { App } from "../pages/App";
-import data from "../data/config-data.json";
+import configData from "../data/config-data.json";
 
 test("TC01 : Verify console errors on all pages", async ({ page }) => {
   const fashionhubApp = new App(page);
@@ -30,6 +30,8 @@ test("TC03 : Verify user login", async ({ page }) => {
 
   // Visit the Account page, login and check if it was successful.
   await fashionhubApp.getAccountPage().visit();
-  await fashionhubApp.getAccountPage().login(data.username, data.password);
+  await fashionhubApp
+    .getAccountPage()
+    .login(configData.username, configData.password);
   await fashionhubApp.getAccountPage().verifyLogin();
 });

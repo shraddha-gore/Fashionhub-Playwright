@@ -1,7 +1,7 @@
 import { Octokit } from "octokit";
 import fs from "fs";
 import path from "path";
-import data from "../data/config-data.json";
+import configData from "../data/config-data.json";
 
 /**
  * Fetches pull requests from a GitHub repository.
@@ -24,10 +24,10 @@ export async function fetchPRs(owner, repo, state, authToken) {
       owner: owner,
       repo: repo,
       state: state,
-      per_page: data.per_page,
+      per_page: configData.per_page,
       page: page,
       headers: {
-        "X-GitHub-Api-Version": data.github_api_version,
+        "X-GitHub-Api-Version": configData.github_api_version,
       },
     });
 
@@ -57,7 +57,8 @@ export async function fetchPRs(owner, repo, state, authToken) {
  */
 export function writeToCSV(data, headers, fileName) {
   // Resolve the path to the 'output' directory.
-  const dirPath = path.resolve(__dirname, "../output");
+
+  const dirPath = path.resolve(__dirname, `../${configData["output-dir"]}`);
   const filePath = path.join(dirPath, fileName);
 
   // Check if the directory exists and create it if it doesn't.
