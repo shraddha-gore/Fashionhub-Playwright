@@ -8,7 +8,7 @@ import data from "../data/config-data.json";
  * Arguments - owner, repo, state, authToken
  * Returns array of objects containing PR title, author, and creation date.
  */
-export async function fetchPRs(owner, repo, state = "open", authToken) {
+export async function fetchPRs(owner, repo, state, authToken) {
   // Initialize the Octokit client with authentication token.
   const octokit = new Octokit({
     auth: authToken,
@@ -63,6 +63,11 @@ export function writeToCSV(data, headers, fileName) {
   // Check if the directory exists and create it if it doesn't.
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
+  }
+
+  // Delete the file if it exists.
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
   }
 
   // Map the data array to CSV rows.
