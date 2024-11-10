@@ -28,10 +28,12 @@ test("TC02 : Verify status code on all pages", async ({ page }) => {
 test("TC03 : Verify user login", async ({ page }) => {
   const fashionhubApp = new App(page);
 
+  // Fetch the user credentials from config data.
+  const username = configData.username;
+  const password = configData.password;
+
   // Visit the Account page, login and check if it was successful.
   await fashionhubApp.getAccountPage().visit();
-  await fashionhubApp
-    .getAccountPage()
-    .login(configData.username, configData.password);
+  await fashionhubApp.getAccountPage().login(username, password);
   await fashionhubApp.getAccountPage().verifyLogin();
 });
