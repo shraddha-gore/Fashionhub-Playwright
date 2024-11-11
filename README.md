@@ -22,13 +22,13 @@ To run this project, ensure the following dependencies are installed:
 Follow these steps to set up and execute the tests:
 
 1. **Install [Node.js](https://nodejs.org/en/download/package-manager)** on your machine if it is not already installed.
-2. **Clone the repository**:
+2. **Clone the repository** using your terminal:
 
 ```
 git clone https://github.com/shraddha-gore/Fashionhub-Playwright.git
 ```
 
-3. **Navigate to the project directory** using your terminal:
+3. **Navigate to the project directory**:
 
 ```
 cd Fashionhub-Playwright
